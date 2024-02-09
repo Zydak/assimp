@@ -3,13 +3,14 @@ project "assimp"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
-    	staticruntime "off"
+	staticruntime "on"
 	
-    	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+    targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	defines
 	{
+        "D_CRT_SECURE_NO_WARNINGS",
 		"ASSIMP_BUILD_NO_OWN_ZLIB",
         	"RAPIDJSON_HAS_STDSTRING",
 
