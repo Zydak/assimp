@@ -168,6 +168,8 @@ project "assimp"
 		"contrib/openddlparser/include",
 	}
 
+    buildoptions { "/MP" }
+
 	filter "platforms:Windows"
         system "Windows"
         defines { "WIN" }
